@@ -4,6 +4,8 @@ Forked from [the Team Fortress Wiki](https://github.com/tfwiki/mediawiki).
 
 ## Running locally
 
+No idea if this works.
+
 The wiki can be ran locally via `docker-compose`:
 
 - Build a `bongo50/mediawiki:local` image from source: `make`
