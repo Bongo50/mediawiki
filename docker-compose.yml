@@ -18,26 +18,26 @@ services:
     restart: always
     depends_on:
     - database
-    - memcached
+#    - memcached
     volumes:
     - mediawiki-media:/var/www/html/w/images
     env_file: .env
 
-  memcached:
-    container_name: memcached
-    image: memcached
+  # memcached:
+  #   container_name: memcached
+  #   image: memcached
 
-  nginx-proxy:
-    container_name: nginx-proxy
-    image: jwilder/nginx-proxy:latest
-    depends_on:
-    - varnish
-    ports:
-    - 80:80
-    - 443:443
-    volumes:
-    - ./certs:/etc/nginx/certs:ro
-    - /var/run/docker.sock:/tmp/docker.sock:ro
+  # nginx-proxy:
+  #   container_name: nginx-proxy
+  #   image: jwilder/nginx-proxy:latest
+  #   depends_on:
+  #   - varnish
+  #   ports:
+  #   - 80:80
+  #   - 443:443
+  #   volumes:
+  #   - ./certs:/etc/nginx/certs:ro
+  #   - /var/run/docker.sock:/tmp/docker.sock:ro
 
 
 volumes:

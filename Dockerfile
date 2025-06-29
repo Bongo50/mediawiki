@@ -19,9 +19,8 @@ RUN a2enmod rewrite
 RUN a2enmod headers
 
 # MediaWiki needs these extra extensions
-RUN docker-php-ext-install sockets
-RUN pecl install memcached && \
-    docker-php-ext-enable memcached
+#RUN pecl install memcached && \
+#    docker-php-ext-enable memcached
 
 # We want the wiki in a w/ subfolder
 RUN mv /var/www/html /var/www/i-will-be-w && \
