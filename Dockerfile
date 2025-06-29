@@ -36,11 +36,8 @@ RUN mv /var/www/html /var/www/i-will-be-w && \
 COPY src/shell /var/www/html/shell
 
 # MediaWiki extensions
-COPY src/extensions/AbuseFilter /var/www/html/w/extensions/AbuseFilter
-COPY src/extensions/Echo /var/www/html/w/extensions/Echo
-COPY src/extensions/EmbedVideo /var/www/html/w/extensions/EmbedVideo
-COPY src/extensions/Scribunto /var/www/html/w/extensions/Scribunto
-COPY src/extensions/Thanks /var/www/html/w/extensions/Thanks
+#COPY src/extensions/Scribunto /var/www/html/w/extensions/Scribunto
+#COPY src/extensions/Thanks /var/www/html/w/extensions/Thanks
 
 RUN composer install --no-dev --working-dir=/var/www/html/w/extensions/AbuseFilter
 RUN composer install --no-dev --working-dir=/var/www/html/w/extensions/Echo
