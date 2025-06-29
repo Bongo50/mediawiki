@@ -58,8 +58,8 @@ RUN ( \
 RUN docker-php-ext-enable luasandbox
 
 # Generate config at runtime
-COPY scripts/configure-mediawiki.sh /usr/local/bin/configure-mediawiki
-RUN chmod +x /usr/local/bin/configure-*
+#COPY scripts/configure-mediawiki.sh /usr/local/bin/configure-mediawiki
+#RUN chmod +x /usr/local/bin/configure-*
 
 # Config templates
 COPY configs/php.ini /usr/local/etc/php/php.ini
@@ -67,7 +67,7 @@ COPY configs/apache.conf /etc/apache2/sites-available/000-default.conf
 #COPY configs/LocalSettings.php /var/www/html/w/LocalSettings.php
 
 # Any well known gubbins
-COPY src/.well-known /var/www/html/.well-known
+#COPY src/.well-known /var/www/html/.well-known
 
 VOLUME /var/www/html/w/images
 
@@ -95,4 +95,5 @@ ENV SMTP_PASSWORD=
 ENV SMTP_PORT=
 ENV SMTP_USERNAME=
 
-CMD /usr/local/bin/configure-mediawiki && apache2-foreground
+#CMD /usr/local/bin/configure-mediawiki && apache2-foreground
+CMD apache2-foreground
