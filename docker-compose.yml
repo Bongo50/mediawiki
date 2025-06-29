@@ -11,7 +11,7 @@ services:
 
   mediawiki:
     container_name: mediawiki
-    image: tfwiki/mediawiki:local
+    image: bongo50/mediawiki:local
     build:
       context: .
       dockerfile: Dockerfile
@@ -22,16 +22,6 @@ services:
     volumes:
     - mediawiki-media:/var/www/html/w/images
     env_file: .env
-
-  varnish:
-    container_name: varnish
-    restart: always
-    depends_on:
-    - mediawiki
-    environment:
-    - VIRTUAL_HOST=tfwiki.localhost
-    - BACKEND_HOST=mediawiki
-    image: tfwiki/varnish:local
 
   memcached:
     container_name: memcached
