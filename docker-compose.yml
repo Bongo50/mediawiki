@@ -21,7 +21,7 @@ services:
 #    - memcached
     volumes:
     - mediawiki-media:/var/www/html/w/images
-    env_file: .env
+    env_file: stack.env
 
   # memcached:
   #   container_name: memcached
