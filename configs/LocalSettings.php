@@ -200,3 +200,11 @@ $wgGroupPermissions["*"]["edit"] = false;
 $wgGroupPermissions['user']['oathauth-enable'] = true;
 
 $wgGroupPermissions['sysop']['interwiki'] = true;
+
+
+# Footer text
+$wgHooks['SkinAddFooterLinks'][] = function ( Skin $skin, string $key, array &$footerlinks ) {
+    if ( $key === 'info' ) {
+        $footerlinks['tagline'] = $skin->msg( 'footer-tagline' )->parse();
+    }
+};
