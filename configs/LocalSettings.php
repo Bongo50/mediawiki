@@ -29,7 +29,7 @@ $wgMetaNamespace = "Project";
 $wgScriptPath = "/w";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = 'https://' + getenv("SERVER_DOMAIN");
+$wgServer = getenv("SERVER_URL");
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
