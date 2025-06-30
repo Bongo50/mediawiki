@@ -35,7 +35,6 @@ RUN mv /var/www/html /var/www/i-will-be-w && \
 COPY src/shell /var/www/html/shell
 
 # MediaWiki extensions
-COPY src/extensions/TemplateStyles /var/www/html/w/extensions/TemplateStyles
 
 #RUN composer install --no-dev --working-dir=/var/www/html/w/extensions/Echo
 
