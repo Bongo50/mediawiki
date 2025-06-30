@@ -1,3 +1,7 @@
 [submodule "ext/luasandbox"]
 	path = ext/luasandbox
 	url = https://gerrit.wikimedia.org/r/mediawiki/php/luasandbox.git
+[submodule "src/extensions/TemplateStyles"]
+	path = src/extensions/TemplateStyles
+	url = https://github.com/wikimedia/mediawiki-extensions-TemplateStyles
+	branch = REL1_43
