@@ -15,9 +15,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
 }
 
-
-
-
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
@@ -32,7 +29,7 @@ $wgMetaNamespace = "Project";
 $wgScriptPath = "/w";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = getenv("SERVER_URL");
+$wgServer = 'https://' + getenv("SERVER_DOMAIN");
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -123,21 +120,83 @@ $wgRightsIcon = "$wgResourceBasePath/resources/assets/licenses/cc-by-sa.png";
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
 
-# The following permissions were set based on your choice in the installer
-$wgGroupPermissions["*"]["createaccount"] = false;
-$wgGroupPermissions["*"]["edit"] = false;
+# End of automatically generated settings.
+# Add more configuration options below.
 
-## Default skin: you can change the default skin. Use the internal symbolic
-## names, e.g. 'vector' or 'monobook':
+
+# Skins
 $wgDefaultSkin = "timeless";
-
-# Enabled skins.
-# The following skins were automatically enabled:
 wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );
 
 
-# End of automatically generated settings.
-# Add more configuration options below.
+# Extensions
+wfLoadExtension( 'CategoryTree' );
+wfLoadExtension( 'Cite' );
+wfLoadExtension( 'CiteThisPage' );
+wfLoadExtension( 'CodeEditor' );
+wfLoadExtension( 'Echo' );
+wfLoadExtension( 'Gadgets' );
+wfLoadExtension( 'InputBox' );
+wfLoadExtension( 'Interwiki' );
+wfLoadExtension( 'LoginNotify' );
+wfLoadExtension( 'Math' );
+wfLoadExtension( 'MultimediaViewer' );
+wfLoadExtension( 'OATHAuth' );
+wfLoadExtension( 'PageImages' );
+wfLoadExtension( 'ParserFunctions' );
+wfLoadExtension( 'Poem' );
+wfLoadExtension( 'ReplaceText' );
+wfLoadExtension( 'Scribunto' );
+wfLoadExtension( 'SecureLinkFixer' );
+wfLoadExtension( 'TemplateData' );
+wfLoadExtension( 'TemplateStyles' );
+wfLoadExtension( 'TextExtracts' );
+wfLoadExtension( 'Thanks' );
+wfLoadExtension( 'WikiEditor' );
 
-$wgShowExceptionDetails = true;
+## Extension configs
+### Cite
+$wgCiteBookReferencing = true;
+### CodeEditor
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
+## Math
+$wgMathValidModes = [ 'source', 'native', 'mathjax', 'latexml' ];
+$wgDefaultUserOptions['math'] = 'native';
+## PageImages
+$wgPageImagesDenylist = [[
+		'type' => 'db',
+		'page' => 'MediaWiki:Pageimages-denylist',
+		'db' => false,
+	]];
+$wgPageImagesExpandOpenSearchXml = true;
+## ParserFunctions
+$wgPFEnableStringFunctions = true;
+## Scribunto
+$wgScribuntoDefaultEngine = 'luastandalone';
+## TemplateStyles
+$wgTemplateStylesAllowedUrls = [
+    "audio" => [
+        "<^https:\/\/warwick-wiki\.containers\.uwcs\.co\.uk\/w\/images\/[^?#]*>"
+    ],
+    "image" => [
+        "<^https:\/\/warwick-wiki\.containers\.uwcs\.co\.uk\/w\/images\/[^?#]*>"
+    ],
+    "svg" => [
+        "<^https:\/\/warwick-wiki\.containers\.uwcs\.co\.uk\/w\/images\/[^?#]*\\.svg(?:[?#]|$)>"
+    ],
+    "font" => [],
+    "namespace" => [
+        "<.>"
+    ],
+];
+## TextExtracts
+$wgExtractsExtendOpenSearchXml = true;
+
+# User group rights
+$wgGroupPermissions["*"]["createaccount"] = false;
+$wgGroupPermissions["*"]["edit"] = false;
+
+$wgGroupPermissions['user']['oathauth-enable'] = true;
+
+$wgGroupPermissions['sysop']['interwiki'] = true;
