@@ -150,7 +150,7 @@ wfLoadExtension( 'ReplaceText' );
 wfLoadExtension( 'Scribunto' );
 wfLoadExtension( 'SecureLinkFixer' );
 wfLoadExtension( 'TemplateData' );
-wfLoadExtension( 'TemplateStyles' );
+#wfLoadExtension( 'TemplateStyles' );
 wfLoadExtension( 'TextExtracts' );
 wfLoadExtension( 'Thanks' );
 wfLoadExtension( 'WikiEditor' );
