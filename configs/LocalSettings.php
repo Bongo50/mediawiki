@@ -95,7 +95,7 @@ $wgPingback = true;
 $wgLanguageCode = "en-gb";
 
 # Time zone
-$wgLocaltimezone = "UTC";
+$wgLocaltimezone = "Europe/London";
 
 ## Set $wgCacheDirectory to a writable directory on the web server
 ## to make your wiki go slightly faster. The directory should not
