@@ -27,3 +27,4 @@ Forked from [the Team Fortress Wiki](https://github.com/tfwiki/mediawiki).
 | `SMTP_PASSWORD`           | -                                     | `$wgSMTP['password']`         |
 | `SMTP_PORT`               | -                                     | `$wgSMTP['port']`             |
 | `SMTP_USERNAME`           | -                                     | `$wgSMTP['username']`         |
+| `UPGRADE_KEY`             | _Required_                            | `$wgUpgradeKey`               | |
