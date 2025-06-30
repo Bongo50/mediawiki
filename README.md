@@ -2,19 +2,8 @@
 
 Forked from [the Team Fortress Wiki](https://github.com/tfwiki/mediawiki).
 
-## Running locally
-
-No idea if this works.
-
-The wiki can be ran locally via `docker-compose`:
-
-- Build a `bongo50/mediawiki:local` image from source: `make`
-- Update your hosts file to map `mediawiki.localhost` to the host IP (presumably `127.0.0.1`)
-- Create `.env` file with the variables to configure your stack (`cp .env.example .env`; `.env.example` is pre-configured for running locally)
-- Generate some self-signed SSL certs: `make certs`
-- Bring up the stack! `docker-compose up -d`
-
 ## Configuration
+*Not all up to date!*
 
 | Variable                  | Default                               | Associated MediaWiki variable | Notes                                                                                                  |
 | ------------------------- | ------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------ |
