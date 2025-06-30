@@ -28,6 +28,8 @@ $wgMetaNamespace = "Project";
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
 $wgScriptPath = "/w";
 
+$wgArticlePath = "/wiki/$1";
+
 ## The protocol and server name to use in fully-qualified URLs
 $wgServer = getenv("SERVER_URL");
 
