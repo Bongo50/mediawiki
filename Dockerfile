@@ -60,7 +60,7 @@ COPY src/shell /var/www/html/shell
 # Config templates
 COPY configs/php.ini /usr/local/etc/php/php.ini
 COPY configs/apache.conf /etc/apache2/sites-available/000-default.conf
-COPY configs/LocalSettings.php /var/www/html/w/LocalSettings.php
+#COPY configs/LocalSettings.php /var/www/html/w/LocalSettings.php
 
 # Any well known gubbins
 #COPY src/.well-known /var/www/html/.well-known
