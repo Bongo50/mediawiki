@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y \
         zip \
         unzip \
         git \
-        wget \
         python3 \
         ffmpeg \
         libvips \
