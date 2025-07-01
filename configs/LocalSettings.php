@@ -152,6 +152,7 @@ wfLoadExtension( 'Poem' );
 wfLoadExtension( 'ReplaceText' );
 wfLoadExtension( 'Scribunto' );
 wfLoadExtension( 'SecureLinkFixer' );
+wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 wfLoadExtension( 'TemplateData' );
 wfLoadExtension( 'TemplateStyles' );
 wfLoadExtension( 'TextExtracts' );
