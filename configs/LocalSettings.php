@@ -143,6 +143,7 @@ wfLoadExtensions( [
     'Disambiguator',
     'Echo',
     'EditCountNeue',
+    'EmbedVideo',
     'Gadgets',
     'InputBox',
     'Interwiki',
@@ -165,6 +166,7 @@ wfLoadExtensions( [
     'Thanks',
     'Thumbro',
     'Variables',
+    'VariablesLua',
     'WikiEditor',
     'WikiSEO'
 ] );
