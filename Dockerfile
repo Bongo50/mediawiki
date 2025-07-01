@@ -49,7 +49,6 @@ RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/exte
     git clone --depth 1 -b REL1_43  && \
     git clone --depth 1 -b REL1_43  && \
     git clone --depth 1 -b REL1_43  && \
-    # Manual updates:
     git clone --depth 1 -b v3.4.3 https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo.git && \
     mv mediawiki-extensions-EmbedVideo EmbedVideo && \
     git clone --depth 1 -b v1.0.0 https://github.com/StarCitizenTools/mediawiki-extensions-Thumbro.git && \
@@ -58,6 +57,7 @@ RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/exte
 WORKDIR /var/www/html
 
 RUN chmod a+x /var/www/html/w/extensions/SyntaxHighlight_GeSHi/pygments/pygmentize
+
 #RUN composer install --no-dev --working-dir=/var/www/html/w/extensions/Echo
 
 # Generate config at runtime
