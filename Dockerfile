@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
         less \
         zip \
         unzip \
+        git \
         libmemcached-dev \
         libz-dev \
     --no-install-recommends && \
@@ -35,6 +36,8 @@ RUN mv /var/www/html /var/www/i-will-be-w && \
 COPY src/shell /var/www/html/shell
 
 # MediaWiki extensions
+WORKDIR /extensions
+RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles
 
 #RUN composer install --no-dev --working-dir=/var/www/html/w/extensions/Echo
 
