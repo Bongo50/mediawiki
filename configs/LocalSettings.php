@@ -175,7 +175,7 @@ $wgPageImagesExpandOpenSearchXml = true;
 ## ParserFunctions
 $wgPFEnableStringFunctions = true;
 ## Scribunto
-$wgScribuntoDefaultEngine = 'luastandalone';
+$wgScribuntoDefaultEngine = 'luasandbox';
 ## TemplateStyles
 $wgTemplateStylesAllowedUrls = [
     "audio" => [

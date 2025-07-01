@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
         zip \
         unzip \
         git \
+        python3 \
+        php-luasandbox \
         libmemcached-dev \
         libz-dev \
     --no-install-recommends && \
@@ -38,9 +40,10 @@ COPY src/shell /var/www/html/shell
 # MediaWiki extensions
 WORKDIR /var/www/html/w/extensions
 RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles
-
+RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/SyntaxHighlight_GeSHi
 WORKDIR /var/www/html
 
+RUN chmod a+x /var/www/html/w/extensions/SyntaxHighlight_GeSHi/pygments/pygmentize
 #RUN composer install --no-dev --working-dir=/var/www/html/w/extensions/Echo
 
 # Better Scribunto (lua) performance, apparently
