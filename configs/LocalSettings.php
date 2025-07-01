@@ -137,6 +137,7 @@ wfLoadExtension( 'CategoryTree' );
 wfLoadExtension( 'Cite' );
 wfLoadExtension( 'CiteThisPage' );
 wfLoadExtension( 'CodeEditor' );
+wfLoadExtension( 'CommonsMetadata' );
 wfLoadExtension( 'Echo' );
 wfLoadExtension( 'Gadgets' );
 wfLoadExtension( 'InputBox' );

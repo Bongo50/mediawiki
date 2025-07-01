@@ -40,6 +40,7 @@ COPY src/shell /var/www/html/shell
 WORKDIR /var/www/html/w/extensions
 RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles
 RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/SyntaxHighlight_GeSHi
+RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/CommonsMetadata
 WORKDIR /var/www/html
 
 RUN chmod a+x /var/www/html/w/extensions/SyntaxHighlight_GeSHi/pygments/pygmentize
