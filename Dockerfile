@@ -39,6 +39,8 @@ COPY src/shell /var/www/html/shell
 WORKDIR /var/www/html/w/extensions
 RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles
 
+WORKDIR /var/www/html
+
 #RUN composer install --no-dev --working-dir=/var/www/html/w/extensions/Echo
 
 # Better Scribunto (lua) performance, apparently
@@ -90,6 +92,8 @@ ENV SMTP_IDHOST=
 ENV SMTP_PASSWORD=
 ENV SMTP_PORT=
 ENV SMTP_USERNAME=
+
+WORKDIR /var/www/html/w
 
 #CMD /usr/local/bin/configure-mediawiki && apache2-foreground
 CMD apache2-foreground
