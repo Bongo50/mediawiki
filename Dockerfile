@@ -39,7 +39,6 @@ COPY src/shell /var/www/html/shell
 # MediaWiki extensions
 WORKDIR /var/www/html/w/extensions
 RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles
-RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/SyntaxHighlight_GeSHi
 RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/CommonsMetadata
 WORKDIR /var/www/html
 
