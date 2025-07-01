@@ -46,9 +46,6 @@ RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/exte
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/WikiSEO && \
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Description2 && \
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Popups && \
-    git clone --depth 1 -b REL1_43  && \
-    git clone --depth 1 -b REL1_43  && \
-    git clone --depth 1 -b REL1_43  && \
     git clone --depth 1 -b v3.4.3 https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo.git && \
     mv mediawiki-extensions-EmbedVideo EmbedVideo && \
     git clone --depth 1 -b v1.0.0 https://github.com/StarCitizenTools/mediawiki-extensions-Thumbro.git && \
