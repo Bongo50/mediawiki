@@ -142,6 +142,7 @@ wfLoadExtensions( [
     'Description2',
     'Disambiguator',
     'Echo',
+    'EditCountNeue',
     'Gadgets',
     'InputBox',
     'Interwiki',
@@ -151,6 +152,7 @@ wfLoadExtensions( [
     'OATHAuth',
     'PageImages',
     'ParserFunctions',
+    'ParserPower',
     'Poem',
     'Popups',
     'ReplaceText',
@@ -162,6 +164,7 @@ wfLoadExtensions( [
     'TextExtracts',
     'Thanks',
     'Thumbro',
+    'Variables',
     'WikiEditor',
     'WikiSEO'
 ] );
