@@ -49,7 +49,6 @@ RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/exte
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Variables && \
     git clone --depth 1 -b REL1_43 https://github.com/wiki-gg-oss/mediawiki-extensions-ParserPower.git && mv mediawiki-extensions-ParserPower ParserPower && \
     git clone --depth 1 -b REL1_43 https://github.com/AlPha5130/mediawiki-extensions-EditCountNeue.git && mv mediawiki-extensions-EditCountNeue EditCountNeue && \
-    # Manual updates:
     git clone --depth 1 -b v3.4.3 https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo.git && mv mediawiki-extensions-EmbedVideo EmbedVideo && \
     git clone --depth 1 -b v1.0.0 https://github.com/StarCitizenTools/mediawiki-extensions-Thumbro.git && mv mediawiki-extensions-Thumbro Thumbro && \
     git clone --depth 1 -b v1.6.0 https://github.com/Liquipedia/VariablesLua.git
