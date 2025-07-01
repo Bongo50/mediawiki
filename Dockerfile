@@ -7,7 +7,10 @@ RUN apt-get update && apt-get install -y \
         zip \
         unzip \
         git \
+        wget \
         python3 \
+        ffmpeg \
+        libvips \
         libmemcached-dev \
         libz-dev \
     --no-install-recommends && \
@@ -38,8 +41,21 @@ COPY src/shell /var/www/html/shell
 
 # MediaWiki extensions
 WORKDIR /var/www/html/w/extensions
-RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles
-RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/CommonsMetadata
+RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles && \
+    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/CommonsMetadata && \
+    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Disambiguator && \
+    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/WikiSEO && \
+    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Description2 && \
+    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Popups && \
+    git clone --depth 1 -b REL1_43  && \
+    git clone --depth 1 -b REL1_43  && \
+    git clone --depth 1 -b REL1_43  && \
+    # Manual updates:
+    git clone --depth 1 -b v3.4.3 https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo.git && \
+    mv mediawiki-extensions-EmbedVideo EmbedVideo && \
+    git clone --depth 1 -b v1.0.0 https://github.com/StarCitizenTools/mediawiki-extensions-Thumbro.git && \
+    mv mediawiki-extensions-Thumbro Thumbro
+
 WORKDIR /var/www/html
 
 RUN chmod a+x /var/www/html/w/extensions/SyntaxHighlight_GeSHi/pygments/pygmentize

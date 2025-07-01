@@ -133,52 +133,63 @@ wfLoadSkin( 'Vector' );
 
 
 # Extensions
-wfLoadExtension( 'CategoryTree' );
-wfLoadExtension( 'Cite' );
-wfLoadExtension( 'CiteThisPage' );
-wfLoadExtension( 'CodeEditor' );
-wfLoadExtension( 'CommonsMetadata' );
-wfLoadExtension( 'Echo' );
-wfLoadExtension( 'Gadgets' );
-wfLoadExtension( 'InputBox' );
-wfLoadExtension( 'Interwiki' );
-wfLoadExtension( 'LoginNotify' );
-wfLoadExtension( 'Math' );
-wfLoadExtension( 'MultimediaViewer' );
-wfLoadExtension( 'OATHAuth' );
-wfLoadExtension( 'PageImages' );
-wfLoadExtension( 'ParserFunctions' );
-wfLoadExtension( 'Poem' );
-wfLoadExtension( 'ReplaceText' );
-wfLoadExtension( 'Scribunto' );
-wfLoadExtension( 'SecureLinkFixer' );
-wfLoadExtension( 'SyntaxHighlight_GeSHi' );
-wfLoadExtension( 'TemplateData' );
-wfLoadExtension( 'TemplateStyles' );
-wfLoadExtension( 'TextExtracts' );
-wfLoadExtension( 'Thanks' );
-wfLoadExtension( 'WikiEditor' );
+wfLoadExtensions( [
+    'CategoryTree',
+    'Cite',
+    'CiteThisPage',
+    'CodeEditor',
+    'CommonsMetadata',
+    'Description2',
+    'Disambiguator',
+    'Echo',
+    'Gadgets',
+    'InputBox',
+    'Interwiki',
+    'LoginNotify',
+    'Math',
+    'MultimediaViewer',
+    'OATHAuth',
+    'PageImages',
+    'ParserFunctions',
+    'Poem',
+    'Popups',
+    'ReplaceText',
+    'Scribunto',
+    'SecureLinkFixer',
+    'SyntaxHighlight_GeSHi',
+    'TemplateData',
+    'TemplateStyles',
+    'TextExtracts',
+    'Thanks',
+    'Thumbro',
+    'WikiEditor',
+    'WikiSEO'
+] );
 
 ## Extension configs
 ### Cite
 $wgCiteBookReferencing = true;
 ### CodeEditor
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
-## Math
+### Description2
+$wgEnableMetaDescriptionFunctions = true;
+### Disambiguator
+$wgDisambiguatorNotifications = true;
+### Math
 $wgMathValidModes = [ 'source', 'native', 'mathjax', 'latexml' ];
 $wgDefaultUserOptions['math'] = 'native';
-## PageImages
+### PageImages
 $wgPageImagesDenylist = [[
 		'type' => 'db',
 		'page' => 'MediaWiki:Pageimages-denylist',
 		'db' => false,
 	]];
 $wgPageImagesExpandOpenSearchXml = true;
-## ParserFunctions
+### ParserFunctions
 $wgPFEnableStringFunctions = true;
-## Scribunto
+### Scribunto
 $wgScribuntoDefaultEngine = 'luasandbox';
-## TemplateStyles
+### TemplateStyles
 $wgTemplateStylesAllowedUrls = [
     "audio" => [
         "<^https:\/\/warwick-wiki\.containers\.uwcs\.co\.uk\/w\/images\/[^?#]*>"
@@ -194,8 +205,13 @@ $wgTemplateStylesAllowedUrls = [
         "<.>"
     ],
 ];
-## TextExtracts
+### TextExtracts
 $wgExtractsExtendOpenSearchXml = true;
+### WikiSEO
+$wgWikiSeoDisableLogoFallbackImage = true;
+$wgWikiSeoDefaultLanguage = $wgLanguageCode;
+$wgWikiSeoEnableAutoDescription = true;
+$wgWikiSeoTryCleanAutoDescription = true;
 
 # User group rights
 $wgGroupPermissions["*"]["createaccount"] = false;
