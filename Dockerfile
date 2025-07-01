@@ -36,7 +36,7 @@ RUN mv /var/www/html /var/www/i-will-be-w && \
 COPY src/shell /var/www/html/shell
 
 # MediaWiki extensions
-WORKDIR /extensions
+WORKDIR /var/www/html/w/extensions
 RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles
 
 #RUN composer install --no-dev --working-dir=/var/www/html/w/extensions/Echo
