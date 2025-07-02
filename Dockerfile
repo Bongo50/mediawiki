@@ -65,7 +65,7 @@ RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/exte
 
 WORKDIR /var/www/html
 
-RUN composer update
+#RUN composer update
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/maps:~10.1
 RUN composer update mediawiki/maps --no-dev -o
 
