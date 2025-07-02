@@ -72,6 +72,9 @@ RUN composer update mediawiki/maps --no-dev -o
 
 RUN chmod a+x /var/www/html/w/extensions/SyntaxHighlight_GeSHi/pygments/pygmentize
 
+WORKDIR /var/www/html/w/extensions/TemplateStyles
+RUN composer install --no-dev
+
 WORKDIR /var/www/html
 
 # Generate config at runtime
