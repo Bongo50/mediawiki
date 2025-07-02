@@ -10,11 +10,13 @@ RUN apt-get update && apt-get install -y \
         python3 \
         ffmpeg \
         libvips \
-        composer \
         libmemcached-dev \
         libz-dev \
     --no-install-recommends && \
     rm -r /var/lib/apt/lists/*
+
+RUN curl -sS https://getcomposer.org/installer | \
+    php -- --install-dir=/usr/bin/ --filename=composer
 
 # We want Apache's rewrite module
 RUN a2enmod rewrite
