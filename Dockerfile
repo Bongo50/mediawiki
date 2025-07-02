@@ -54,6 +54,8 @@ RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/exte
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/RandomSelection && \
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/DismissableSiteNotice && \
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/RSS && \
+    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateWizard && \
+    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateSandbox && \
     git clone --depth 1 -b REL1_43 https://github.com/wiki-gg-oss/mediawiki-extensions-ParserPower.git && mv mediawiki-extensions-ParserPower ParserPower && \
     git clone --depth 1 -b REL1_43 https://github.com/AlPha5130/mediawiki-extensions-EditCountNeue.git && mv mediawiki-extensions-EditCountNeue EditCountNeue && \
     git clone --depth 1 -b v3.4.3 https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo.git && mv mediawiki-extensions-EmbedVideo EmbedVideo && \
@@ -63,9 +65,11 @@ RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/exte
 
 WORKDIR /var/www/html
 
-RUN chmod a+x /var/www/html/w/extensions/SyntaxHighlight_GeSHi/pygments/pygmentize
+RUN composer update && \
+    COMPOSER=composer.local.json composer require --no-update mediawiki/maps:~10.1 && \
+    composer update mediawiki/maps --no-dev -o
 
-#RUN composer install --no-dev --working-dir=/var/www/html/w/extensions/Echo
+RUN chmod a+x /var/www/html/w/extensions/SyntaxHighlight_GeSHi/pygments/pygmentize
 
 # Generate config at runtime
 #COPY scripts/configure-mediawiki.sh /usr/local/bin/configure-mediawiki
