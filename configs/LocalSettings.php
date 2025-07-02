@@ -151,6 +151,7 @@ wfLoadExtensions( [
     'InputBox',
     'Interwiki',
     'LoginNotify',
+    'Loops',
     'Maps',
     'Math',
     'MultimediaViewer',
