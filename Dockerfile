@@ -63,13 +63,15 @@ RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/exte
     git clone --depth 1 -b 1.6.0 https://github.com/Liquipedia/VariablesLua.git && \
     git clone --depth 1 https://github.com/Universal-Omega/PortableInfobox.git
 
-WORKDIR /var/www/html
+WORKDIR /var/www/html/w
 
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/maps:~10.1
-RUN composer update
+#RUN composer update
 RUN composer update mediawiki/maps --no-dev -o
 
 RUN chmod a+x /var/www/html/w/extensions/SyntaxHighlight_GeSHi/pygments/pygmentize
+
+WORKDIR /var/www/html
 
 # Generate config at runtime
 #COPY scripts/configure-mediawiki.sh /usr/local/bin/configure-mediawiki
