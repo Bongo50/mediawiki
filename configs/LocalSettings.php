@@ -144,6 +144,7 @@ wfLoadExtensions( [
     'CookieWarning',
     'Description2',
     'Disambiguator',
+    'DiscussionTools',
     'DismissableSiteNotice',
     'Echo',
     'EditCountNeue',
