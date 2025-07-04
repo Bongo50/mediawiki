@@ -10,8 +10,6 @@ RUN apt-get update && apt-get install -y \
         python3 \
         ffmpeg \
         libvips \
-        libmemcached-dev \
-        libz-dev \
     --no-install-recommends && \
     rm -r /var/lib/apt/lists/*
 
@@ -34,9 +32,6 @@ RUN mv /var/www/html /var/www/i-will-be-w && \
 # Assets
 #COPY src/fonts /var/www/html/fonts
 #COPY src/favicon.ico /var/www/html/
-
-# Shell utils
-COPY src/shell /var/www/html/shell
 
 # MediaWiki extensions
 WORKDIR /var/www/html/w/extensions
@@ -78,17 +73,11 @@ RUN composer install --no-dev
 
 WORKDIR /var/www/html
 
-# Generate config at runtime
-#COPY scripts/configure-mediawiki.sh /usr/local/bin/configure-mediawiki
-#RUN chmod +x /usr/local/bin/configure-*
-
 # Config templates
 COPY configs/php.ini /usr/local/etc/php/php.ini
 COPY configs/apache.conf /etc/apache2/sites-available/000-default.conf
 COPY configs/LocalSettings.php /var/www/html/w/LocalSettings.php
 
-# Any well known gubbins
-#COPY src/.well-known /var/www/html/.well-known
 
 VOLUME /var/www/html/w/images
 
@@ -118,5 +107,4 @@ ENV SMTP_USERNAME=
 
 WORKDIR /var/www/html/w
 
-#CMD /usr/local/bin/configure-mediawiki && apache2-foreground
 CMD apache2-foreground
