@@ -151,6 +151,7 @@ wfLoadExtensions( [
     'Gadgets',
     'InputBox',
     'Interwiki',
+    'Linter',
     'LoginNotify',
     'Loops',
     'Maps',
@@ -196,6 +197,37 @@ $wgCookieWarningEnabled = true;
 $wgEnableMetaDescriptionFunctions = true;
 ### Disambiguator
 $wgDisambiguatorNotifications = true;
+### Linter
+// Load Parsoid
+wfLoadExtension(
+    'Parsoid',
+	"$IP/vendor/wikimedia/parsoid/extension.json"
+);
+
+$wgParsoidSettings = [
+    'useSelser' => true,
+    'linting' => true
+];
+
+$wgVisualEditorParsoidAutoConfig = false; // to make linting work
+
+$wgVirtualRestConfig = [
+	'paths' => [],
+	'modules' => [
+		'parsoid' => [
+			'url' => $wgServer . $wgScriptPath . '/rest.php',
+			'domain' => substr($wgServer, 8)
+			'forwardCookies' => true,
+			'restbaseCompat' => false,
+			'timeout' => 30
+		],
+	],
+	'global' => [
+		'timeout' => 360,
+		'forwardCookies' => false,
+		'HTTPProxy' => null
+	]
+];
 ### Math
 $wgMathValidModes = [ 'source', 'native', 'mathjax', 'latexml' ];
 $wgDefaultUserOptions['math'] = 'native';
