@@ -180,6 +180,7 @@ wfLoadExtensions( [
     'TwoColConflict',
     'Variables',
     'VariablesLua',
+    'VisualEditor',
     'WikiEditor',
     'WikiSEO'
 ] );
@@ -227,6 +228,8 @@ $wgTemplateStylesAllowedUrls = [
 ];
 ### TextExtracts
 $wgExtractsExtendOpenSearchXml = true;
+### VisualEditor
+
 ### WikiSEO
 $wgWikiSeoDisableLogoFallbackImage = true;
 $wgWikiSeoDefaultLanguage = $wgLanguageCode;
@@ -238,6 +241,7 @@ $wgGroupPermissions["*"]["createaccount"] = false;
 $wgGroupPermissions["*"]["edit"] = false;
 
 $wgGroupPermissions['user']['oathauth-enable'] = true;
+$wgGroupPermissions['user']['writeapi'] = true;
 
 $wgGroupPermissions['sysop']['interwiki'] = true;
 
