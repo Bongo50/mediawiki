@@ -141,7 +141,7 @@ wfLoadExtensions( [
     'CodeEditor',
     'CodeMirror',
     'CommonsMetadata',
-    #'CookieWarning',
+    'CookieWarning',
     'Description2',
     'Disambiguator',
     'DismissableSiteNotice',
@@ -190,7 +190,7 @@ $wgCiteBookReferencing = true;
 ### CodeEditor
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 ### CookieWarning
-$wgCookieWarningEnabled
+$wgCookieWarningEnabled = true;
 ### Description2
 $wgEnableMetaDescriptionFunctions = true;
 ### Disambiguator
