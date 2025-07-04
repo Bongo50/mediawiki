@@ -229,7 +229,7 @@ $wgTemplateStylesAllowedUrls = [
 ### TextExtracts
 $wgExtractsExtendOpenSearchXml = true;
 ### VisualEditor
-wfLoadExtension( 'Parsoid', 'vendor/wikimedia/parsoid/extension.json' );
+/*wfLoadExtension( 'Parsoid', 'vendor/wikimedia/parsoid/extension.json' );
 $wgVirtualRestConfig['modules']['parsoid'] = array(
     // URL to the Parsoid instance.
     // You should change $wgServer to match the non-local host running Parsoid
@@ -239,7 +239,7 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
     //'url' => $wgServer . $wgScriptPath . '/rest.php',
     // Parsoid "domain", see below (optional, rarely needed)
     // 'domain' => 'localhost',
-);
+);*/
 ### WikiSEO
 $wgWikiSeoDisableLogoFallbackImage = true;
 $wgWikiSeoDefaultLanguage = $wgLanguageCode;
