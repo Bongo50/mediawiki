@@ -234,7 +234,7 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
     // You should change $wgServer to match the non-local host running Parsoid
     // Note! This is a server to server URL (it must be valid within your VM/container)
     // For a VM or docker this will probably be correct:
-    'url' => "http://localhost/w/rest.php",
+    'url' => "http://mediawiki/w/rest.php",
     //'url' => $wgServer . $wgScriptPath . '/rest.php',
     // Parsoid "domain", see below (optional, rarely needed)
     // 'domain' => 'localhost',
