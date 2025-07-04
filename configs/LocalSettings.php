@@ -141,7 +141,7 @@ wfLoadExtensions( [
     'CodeEditor',
     'CodeMirror',
     'CommonsMetadata',
-    'CookieWarning',
+    #'CookieWarning',
     'Description2',
     'Disambiguator',
     'DismissableSiteNotice',
@@ -238,7 +238,6 @@ $wgGroupPermissions["*"]["createaccount"] = false;
 $wgGroupPermissions["*"]["edit"] = false;
 
 $wgGroupPermissions['user']['oathauth-enable'] = true;
-$wgGroupPermissions['user']['writeapi'] = true;
 
 $wgGroupPermissions['sysop']['interwiki'] = true;
 
