@@ -229,6 +229,7 @@ $wgTemplateStylesAllowedUrls = [
 ### TextExtracts
 $wgExtractsExtendOpenSearchXml = true;
 ### VisualEditor
+wfLoadExtension( 'Parsoid', 'vendor/wikimedia/parsoid/extension.json' );
 $wgVirtualRestConfig['modules']['parsoid'] = array(
     // URL to the Parsoid instance.
     // You should change $wgServer to match the non-local host running Parsoid
