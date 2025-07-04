@@ -180,6 +180,7 @@ wfLoadExtensions( [
     'TwoColConflict',
     'Variables',
     'VariablesLua',
+    'VisualEditor',
     'WikiEditor',
     'WikiSEO'
 ] );
@@ -227,6 +228,17 @@ $wgTemplateStylesAllowedUrls = [
 ];
 ### TextExtracts
 $wgExtractsExtendOpenSearchXml = true;
+### VisualEditor
+$wgVirtualRestConfig['modules']['parsoid'] = array(
+    // URL to the Parsoid instance.
+    // You should change $wgServer to match the non-local host running Parsoid
+    // Note! This is a server to server URL (it must be valid within your VM/container)
+    // For a VM or docker this will probably be correct:
+    'url' => "http://localhost/w/rest.php",
+    //'url' => $wgServer . $wgScriptPath . '/rest.php',
+    // Parsoid "domain", see below (optional, rarely needed)
+    // 'domain' => 'localhost',
+);
 ### WikiSEO
 $wgWikiSeoDisableLogoFallbackImage = true;
 $wgWikiSeoDefaultLanguage = $wgLanguageCode;
@@ -238,6 +250,7 @@ $wgGroupPermissions["*"]["createaccount"] = false;
 $wgGroupPermissions["*"]["edit"] = false;
 
 $wgGroupPermissions['user']['oathauth-enable'] = true;
+$wgGroupPermissions['user']['writeapi'] = true;
 
 $wgGroupPermissions['sysop']['interwiki'] = true;
 
