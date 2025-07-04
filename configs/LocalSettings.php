@@ -178,6 +178,7 @@ wfLoadExtensions( [
     'TextExtracts',
     'Thanks',
     'Thumbro',
+    'timeline',
     'TitleKey',
     'TwoColConflict',
     'Variables',
@@ -261,8 +262,8 @@ $wgTemplateStylesAllowedUrls = [
 ];
 ### TextExtracts
 $wgExtractsExtendOpenSearchXml = true;
-### VisualEditor
-
+### Timeline
+$wgTimelineFontDirectory = "/usr/share/fonts/truetype/freefont";
 ### WikiSEO
 $wgWikiSeoDisableLogoFallbackImage = true;
 $wgWikiSeoDefaultLanguage = $wgLanguageCode;
