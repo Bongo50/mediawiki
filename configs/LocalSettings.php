@@ -290,8 +290,4 @@ $wgHooks['SkinAddFooterLinks'][] = function ( Skin $skin, string $key, array &$f
 
 
 # File types
-$wgFileExtensions = array_merge(
-    $wgFileExtensions, [
-        'svg'
-    ]
-);
+$wgFileExtensions[] = 'svg';
