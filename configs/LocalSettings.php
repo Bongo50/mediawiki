@@ -270,6 +270,7 @@ $wgWikiSeoDefaultLanguage = $wgLanguageCode;
 $wgWikiSeoEnableAutoDescription = true;
 $wgWikiSeoTryCleanAutoDescription = true;
 
+
 # User group rights
 $wgGroupPermissions["*"]["createaccount"] = false;
 $wgGroupPermissions["*"]["edit"] = false;
@@ -286,3 +287,11 @@ $wgHooks['SkinAddFooterLinks'][] = function ( Skin $skin, string $key, array &$f
         $footerlinks['tagline'] = $skin->msg( 'footer-tagline' )->parse();
     }
 };
+
+
+# File types
+$wgFileExtensions = array_merge(
+    $wgFileExtensions, [
+        'svg'
+    ]
+);
