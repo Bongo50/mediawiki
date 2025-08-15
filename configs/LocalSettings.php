@@ -45,16 +45,27 @@ $wgLogos = [
 
 ## UPO means: this is also a user preference option
 
+## Email
 $wgEnableEmail = true;
 $wgEnableUserEmail = false; # UPO
-$wgEmailAuthentication = false;
+$wgEmailAuthentication = true;
+$wgEmailConfirmToEdit = true;
 
-$wgEmergencyContact = "";
-$wgPasswordSender = "";
+$wgSMTP = [
+    'host'      => getenv("EMAIL_HOST"),
+    'IDHost'    => getenv("EMAIL_IDHOST"),
+    'localhost' => getenv("EMAIL_IDHOST"),
+    'port'      => getenv("EMAIL_PORT"),
+    'auth'      => true,
+    'username'  => getenv("EMAIL_USERNAME"),
+    'password'  => getenv("EMAIL_PASSWORD")
+];
+
+$wgEmergencyContact = getenv("EMAIL_ADDRESS");
+$wgPasswordSender = getenv("EMAIL_ADDRESS");
 
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
-$wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = getenv("DB_TYPE");
