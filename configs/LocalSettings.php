@@ -46,7 +46,8 @@ $wgLogos = [
 ## UPO means: this is also a user preference option
 
 $wgEnableEmail = true;
-$wgEnableUserEmail = true; # UPO
+$wgEnableUserEmail = false; # UPO
+$wgEmailAuthentication = false;
 
 $wgEmergencyContact = "";
 $wgPasswordSender = "";
