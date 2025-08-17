@@ -303,3 +303,8 @@ $wgHooks['SkinAddFooterLinks'][] = function ( Skin $skin, string $key, array &$f
 
 # File types
 $wgFileExtensions[] = 'svg';
+
+
+## Thumbnail sizes
+$wgUploadThumbnailRenderMap = ['150', '250', '300', '500'];
+$wgDefaultUserOptions['thumbsize'] = 4;

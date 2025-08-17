@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
         python3 \
         ffmpeg \
         libvips \
+        libvips-tools \
         ploticus \
         fonts-freefont-ttf \
     --no-install-recommends && \
