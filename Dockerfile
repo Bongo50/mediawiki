@@ -118,4 +118,4 @@ ENV SMTP_USERNAME=
 
 WORKDIR /var/www/html/w
 
-CMD /home/startup.sh
+CMD ["/home/startup.sh"]
