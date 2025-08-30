@@ -146,6 +146,7 @@ wfLoadSkin( 'Vector' );
 
 # Extensions
 wfLoadExtensions( [
+    'Cargo',
     'CategoryTree',
     'CharInsert',
     'Cite',
@@ -174,6 +175,7 @@ wfLoadExtensions( [
     'PageImages',
     'ParserFunctions',
     'ParserPower',
+    'PdfHandler',
     'Poem',
     'Popups',
     'PortableInfobox',
@@ -201,6 +203,31 @@ wfLoadExtensions( [
 ] );
 
 ## Extension configs
+### Cargo
+$wgCargoDBtype = getenv("CARGO_DB_TYPE");
+$wgCargoDBserver = getenv("CARGO_DB_HOST");
+$wgCargoDBname = getenv("CARGO_DB_NAME");
+$wgCargoDBuser = getenv("CARGO_DB_USER");
+$wgCargoDBpassword = getenv("CARGO_DB_PASSWORD");
+$wgCargoStoreUseTemplateArgsFallback = false;
+$wgCargoPageDataColumns[] = 'creationDate';
+$wgCargoPageDataColumns[] = 'modificationDate';
+$wgCargoPageDataColumns[] = 'creator';
+$wgCargoPageDataColumns[] = 'lastEditor';
+$wgCargoPageDataColumns[] = 'fullText';
+$wgCargoPageDataColumns[] = 'categories';
+$wgCargoPageDataColumns[] = 'numRevisions';
+$wgCargoPageDataColumns[] = 'outgoingLinks';
+$wgCargoPageDataColumns[] = 'isRedirect';
+$wgCargoPageDataColumns[] = 'pageNameOrRedirect';
+$wgCargoPageDataColumns[] = 'pageIDOrRedirect';
+$wgCargoFileDataColumns[] = 'mediaType';
+$wgCargoFileDataColumns[] = 'path';
+$wgCargoFileDataColumns[] = 'lastUploadDate';
+$wgCargoFileDataColumns[] = 'fullText';
+$wgCargoFileDataColumns[] = 'numPages';
+$wgCargoPDFToText = 'pdftotext';
+$wgCargoPDFInfo = 'pdfinfo';
 ### Cite
 $wgCiteBookReferencing = true;
 ### CodeEditor
@@ -303,6 +330,7 @@ $wgHooks['SkinAddFooterLinks'][] = function ( Skin $skin, string $key, array &$f
 
 # File types
 $wgFileExtensions[] = 'svg';
+$wgFileExtensions[] = 'pdf';
 
 
 ## Thumbnail sizes

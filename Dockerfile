@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
         libvips-tools \
         ploticus \
         fonts-freefont-ttf \
+        ghostscript imagemagick xpdf-utils \
     --no-install-recommends && \
     rm -r /var/lib/apt/lists/*
 
@@ -57,6 +58,7 @@ RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/exte
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Loops && \
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/CookieWarning && \
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/timeline && \
+    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Cargo && \
     git clone --depth 1 -b REL1_43 https://github.com/wiki-gg-oss/mediawiki-extensions-ParserPower.git && mv mediawiki-extensions-ParserPower ParserPower && \
     git clone --depth 1 -b REL1_43 https://github.com/AlPha5130/mediawiki-extensions-EditCountNeue.git && mv mediawiki-extensions-EditCountNeue EditCountNeue && \
     git clone --depth 1 -b v3.4.3 https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo.git && mv mediawiki-extensions-EmbedVideo EmbedVideo && \
