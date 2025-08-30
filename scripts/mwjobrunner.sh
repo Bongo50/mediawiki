@@ -12,8 +12,8 @@ while true; do
 	php $RUN_JOBS --type="enotifNotify"
 	# Everything else, limit the number of jobs on each batch
 	# The --wait parameter will pause the execution here until new jobs are added, to avoid running the loop without anything to do
-	php $RUN_JOBS --wait --maxjobs=20
+	php $RUN_JOBS --wait --maxjobs=100
 	# Wait some seconds to let the CPU do other things, like handling web requests, etc
-	echo Waiting for 10 seconds...
-	sleep 10
+	echo Waiting for 20 seconds...
+	sleep 20
 done
