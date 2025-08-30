@@ -91,6 +91,7 @@ COPY scripts/mwjobrunner.sh /usr/local/bin/mwjobrunner.sh
 RUN chmod 755 /home/startup.sh
 RUN chmod 755 /usr/local/bin/mwjobrunner.sh
 
+RUN mkdir /home/logs
 RUN touch /home/logs/jobQueue.txt
 
 VOLUME /var/www/html/w/images
