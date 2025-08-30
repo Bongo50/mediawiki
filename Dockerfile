@@ -86,6 +86,7 @@ COPY configs/LocalSettings.php /var/www/html/w/LocalSettings.php
 
 # Copy scripts
 COPY scripts/startup.sh /home/startup.sh
+RUN chmod 755 /home/startup.sh
 COPY scripts/mwjobrunner /usr/local/bin/mwjobrunner
 
 RUN chmod 755 /usr/local/bin/mwjobrunner
