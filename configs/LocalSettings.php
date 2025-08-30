@@ -206,7 +206,7 @@ wfLoadExtensions( [
 ### Cargo
 $wgCargoDBtype = getenv("CARGO_DB_TYPE");
 $wgCargoDBserver = getenv("CARGO_DB_HOST");
-$wgCargoDBname = getenv("CARGO_DB_NAME");
+$wgCargoDBname = getenv("CARGO_DB_DATABASE");
 $wgCargoDBuser = getenv("CARGO_DB_USER");
 $wgCargoDBpassword = getenv("CARGO_DB_PASSWORD");
 $wgCargoStoreUseTemplateArgsFallback = false;
