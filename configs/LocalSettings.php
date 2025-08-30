@@ -336,3 +336,7 @@ $wgFileExtensions[] = 'pdf';
 ## Thumbnail sizes
 $wgUploadThumbnailRenderMap = ['150', '250', '300', '500'];
 $wgDefaultUserOptions['thumbsize'] = 4;
+
+
+
+$wgJobRunRate = 0;
