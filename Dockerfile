@@ -84,6 +84,11 @@ COPY configs/php.ini /usr/local/etc/php/php.ini
 COPY configs/apache.conf /etc/apache2/sites-available/000-default.conf
 COPY configs/LocalSettings.php /var/www/html/w/LocalSettings.php
 
+# Copy scripts
+COPY scripts/startup.sh /home/startup.sh
+COPY scripts/mwjobrunner /usr/local/bin/mwjobrunner
+
+RUN chmod 755 /usr/local/bin/mwjobrunner
 
 VOLUME /var/www/html/w/images
 
@@ -113,4 +118,4 @@ ENV SMTP_USERNAME=
 
 WORKDIR /var/www/html/w
 
-CMD apache2-foreground
+CMD /home/startup.sh
