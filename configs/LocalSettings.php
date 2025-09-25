@@ -339,6 +339,7 @@ $wgUploadThumbnailRenderMap = ['150', '250', '300', '500'];
 $wgDefaultUserOptions['thumbsize'] = 4;
 $wgThumbnailScriptPath = "$wgScriptPath/thumb.php";
 $wgGenerateThumbnailOnParse = false;
+$wgTmpDirectory = "/var/www/html/w/images/temp";
 
 
 $wgJobRunRate = 0;
