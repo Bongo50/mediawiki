@@ -338,7 +338,7 @@ $wgImageMagickConvertCommand = "/usr/bin/convert";
 $wgUploadThumbnailRenderMap = ['150', '250', '300', '500'];
 $wgDefaultUserOptions['thumbsize'] = 4;
 $wgThumbnailScriptPath = "$wgScriptPath/thumb.php";
-$wgGenerateThumbnailOnParse = false
+$wgGenerateThumbnailOnParse = false;
 
 
 $wgJobRunRate = 0;
