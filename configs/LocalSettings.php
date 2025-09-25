@@ -92,8 +92,6 @@ $wgMemCachedServers = [];
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
 $wgEnableUploads = true;
-$wgUseImageMagick = false;
-$wgImageMagickConvertCommand = "/usr/bin/convert";
 
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
 $wgUseInstantCommons = false;
@@ -333,10 +331,14 @@ $wgFileExtensions[] = 'svg';
 $wgFileExtensions[] = 'pdf';
 
 
-## Thumbnail sizes
+## Thumbnails
+$wgThumbnailEpoch = 20250925190434;
+$wgUseImageMagick = true;
+$wgImageMagickConvertCommand = "/usr/bin/convert";
 $wgUploadThumbnailRenderMap = ['150', '250', '300', '500'];
 $wgDefaultUserOptions['thumbsize'] = 4;
-
+$wgThumbnailScriptPath = "$wgScriptPath/thumb.php";
+$wgGenerateThumbnailOnParse = false
 
 
 $wgJobRunRate = 0;
