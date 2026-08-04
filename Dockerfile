@@ -89,6 +89,9 @@ COPY configs/php.ini /usr/local/etc/php/php.ini
 COPY configs/apache.conf /etc/apache2/sites-available/000-default.conf
 COPY configs/LocalSettings.php /var/www/html/w/LocalSettings.php
 
+# Copy additional php MW extensions and files
+COPY extensions/WarwickAuth.php /var/www/html/w/extensions/WSOAuth/src/AuthenticationProvider/WarwickAuth.php
+
 # Copy scripts
 COPY scripts/startup.sh /home/startup.sh
 COPY scripts/mwjobrunner.sh /usr/local/bin/mwjobrunner.sh
