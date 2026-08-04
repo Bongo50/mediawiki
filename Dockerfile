@@ -58,6 +58,8 @@ RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/exte
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Loops && \
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/CookieWarning && \
     git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/timeline && \
+    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/PluggableAuth && \
+    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/WSOAuth && \
     git clone --depth 1 -b REL1_43 https://github.com/wiki-gg-oss/mediawiki-extensions-ParserPower.git && mv mediawiki-extensions-ParserPower ParserPower && \
     git clone --depth 1 -b REL1_43 https://github.com/AlPha5130/mediawiki-extensions-EditCountNeue.git && mv mediawiki-extensions-EditCountNeue EditCountNeue && \
     git clone --depth 1 -b v4.1.0 https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo.git && mv mediawiki-extensions-EmbedVideo EmbedVideo && \
@@ -75,6 +77,9 @@ RUN composer update mediawiki/maps --no-dev -o
 RUN chmod a+x /var/www/html/w/extensions/SyntaxHighlight_GeSHi/pygments/pygmentize
 
 WORKDIR /var/www/html/w/extensions/TemplateStyles
+RUN composer install --no-dev
+
+WORKDIR /var/www/html/w/extensions/WSOAuth
 RUN composer install --no-dev
 
 WORKDIR /var/www/html

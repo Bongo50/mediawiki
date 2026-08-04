@@ -174,6 +174,7 @@ wfLoadExtensions( [
     'ParserFunctions',
     'ParserPower',
     'PdfHandler',
+    'PluggableAuth',
     'Poem',
     'Popups',
     'PortableInfobox',
@@ -197,7 +198,8 @@ wfLoadExtensions( [
     'VariablesLua',
     'VisualEditor',
     'WikiEditor',
-    'WikiSEO'
+    'WikiSEO',
+    'WSOAuth'
 ] );
 
 ## Extension configs
@@ -307,13 +309,43 @@ $wgWikiSeoDefaultLanguage = $wgLanguageCode;
 $wgWikiSeoEnableAutoDescription = true;
 $wgWikiSeoTryCleanAutoDescription = true;
 
+### PluggableAuth and WSOAuth
+$wgPluggableAuth_EnableLocalLogin = true;
+$wgPluggableAuth_EnableLocalProperties = true;
+#$wgPluggableAuth_EnableFastLogout = true;
+$wgPluggableAuth_Config['OAuth'] = [ # NEVER change "OAuth"
+    'plugin' => 'WSOAuth',
+    'data' => [
+        'type' => 'warwick',
+        'uri' => '',
+        'clientId' => getenv("OAUTH_CONSUMER_KEY"),
+        'clientSecret' => getenv("OAUTH_CONSUMER_SECRET")
+    ],
+    'buttonLabelMessage' => 'warwick-login-button',
+    'groupsyncs' => [
+      [
+        'type' => 'mapped',
+        'map' => [
+          'verified' => [ 'urn:mace:dir:attribute-def:eduPersonScopedAffiliation' => 'member@warwick.ac.uk' ]
+        ]
+      ]
+    ]
+];
+$wgOAuthDisallowRemoteOnlyAccounts = true;
+$wgOAuthCustomAuthProviders = [
+    'warwick' => WSOAuth\AuthenticationProvider\WarwickAuth::class
+];
 
 # User group rights
+$wgGroupPermissions['*']['autocreateaccount'] = true;
 $wgGroupPermissions["*"]["createaccount"] = false;
 $wgGroupPermissions["*"]["edit"] = false;
 
+$wgGroupPermissions["user"]["edit"] = false;
 $wgGroupPermissions['user']['oathauth-enable'] = true;
 $wgGroupPermissions['user']['writeapi'] = true;
+
+$wgGroupPermissions["verified"]["edit"] = true;
 
 $wgGroupPermissions['sysop']['interwiki'] = true;
 
