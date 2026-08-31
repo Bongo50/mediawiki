@@ -2,9 +2,9 @@ s|}
 }|},
 	"extra": {
 		"merge-plugin": {
-			"include": [
+			"include": \[
 				"extensions/OpenIDConnect/composer\.json"
-			]
+			\]
 		}
 	}
 }
