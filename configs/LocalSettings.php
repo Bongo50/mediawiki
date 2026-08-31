@@ -170,10 +170,12 @@ wfLoadExtensions( [
     'Math',
     'MultimediaViewer',
     'OATHAuth',
+    'OpenIDConnect',
     'PageImages',
     'ParserFunctions',
     'ParserPower',
     'PdfHandler',
+    'PluggableAuth',
     'Poem',
     'Popups',
     'PortableInfobox',
@@ -279,6 +281,9 @@ $wgPageImagesDenylist = [[
 $wgPageImagesExpandOpenSearchXml = true;
 ### ParserFunctions
 $wgPFEnableStringFunctions = true;
+### PluggableAuth
+$wgPluggableAuth_EnableLocalLogin = true;
+$wgPluggableAuth_EnableLocalProperties = true;
 ### Scribunto
 $wgScribuntoDefaultEngine = 'luasandbox';
 ### TemplateStyles
