@@ -289,13 +289,13 @@ $wgScribuntoDefaultEngine = 'luasandbox';
 ### TemplateStyles
 $wgTemplateStylesAllowedUrls = [
     "audio" => [
-        "<^https:\/\/warwick-wiki\.containers\.uwcs\.co\.uk\/w\/images\/[^?#]*>"
+        "<^https:\/\/warwick\.wiki\/w\/images\/[^?#]*>"
     ],
     "image" => [
-        "<^https:\/\/warwick-wiki\.containers\.uwcs\.co\.uk\/w\/images\/[^?#]*>"
+        "<^https:\/\/warwick\.wiki\/w\/images\/[^?#]*>"
     ],
     "svg" => [
-        "<^https:\/\/warwick-wiki\.containers\.uwcs\.co\.uk\/w\/images\/[^?#]*\\.svg(?:[?#]|$)>"
+        "<^https:\/\/warwick\.wiki\/w\/images\/[^?#]*\\.svg(?:[?#]|$)>"
     ],
     "font" => [],
     "namespace" => [
