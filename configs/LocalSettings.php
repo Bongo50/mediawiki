@@ -332,6 +332,7 @@ $wgWikiSeoTryCleanAutoDescription = true;
 
 
 # User group rights
+$wgGroupPermissions["*"]["autocreateaccount"] = true;
 $wgGroupPermissions["*"]["createaccount"] = true;
 $wgGroupPermissions["*"]["edit"] = false;
 
