@@ -284,6 +284,22 @@ $wgPFEnableStringFunctions = true;
 ### PluggableAuth
 $wgPluggableAuth_EnableLocalLogin = true;
 $wgPluggableAuth_EnableLocalProperties = true;
+$wgPluggableAuth_Config[] = [
+    'plugin' => 'OpenIDConnect',
+    'data' => [
+        'providerURL' => getenv("SSO_PROVIDER_URL"),
+        'clientID' => getenv("SSO_CLIENT_ID"),
+        'clientsecret' => getenv("SSO_CLIENT_SECRET")
+    ],
+    'buttonLabelMessage' => 'UWCS-login',
+    'groupsyncs' => [
+      [
+        'type' => 'mapped',
+        'map' => [
+          'UWCS verified' => [  ]
+      ]
+    ]
+];
 ### Scribunto
 $wgScribuntoDefaultEngine = 'luasandbox';
 ### TemplateStyles
