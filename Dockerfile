@@ -75,7 +75,7 @@ RUN COMPOSER=composer.local.json composer require --no-update mediawiki/maps:~10
 RUN composer update mediawiki/maps --no-dev -o
 
 COPY scripts/OpenIDConnect-sed-command.txt /home/OpenIDConnect-sed-command.txt
-RUN perl -i -pe 'BEGIN{undef $/;} s/}\n}/},\n	"extra": {\n		"merge-plugin": {\n			"include": \[\m				"extensions/OpenIDConnect/composer\.json"\n			\]\n		}\n	}\n}/smg' composer.local.json
+RUN perl -i -pe 'BEGIN{undef $/;} s/}\n}/},\n	"extra": {\n		"merge-plugin": {\n			"include": \[\m				"extensions\/OpenIDConnect\/composer\.json"\n			\]\n		}\n	}\n}/smg' composer.local.json
 RUN composer update
 
 RUN chmod a+x /var/www/html/w/extensions/SyntaxHighlight_GeSHi/pygments/pygmentize
