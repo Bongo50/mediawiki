@@ -293,11 +293,13 @@ $wgPluggableAuth_Config[] = [
     ],
     'buttonLabelMessage' => 'UWCS-login',
     'groupsyncs' => [
-      [
-        'type' => 'mapped',
-        'map' => [
-          'UWCS verified' => [  ]
-      ]
+        [
+            'type' => 'mapped',
+            'map' => [
+            'UWCS verified' => [  ],
+            'verified' => [ ]
+            ]
+        ]
     ]
 ];
 ### Scribunto
@@ -330,11 +332,14 @@ $wgWikiSeoTryCleanAutoDescription = true;
 
 
 # User group rights
-$wgGroupPermissions["*"]["createaccount"] = false;
+$wgGroupPermissions["*"]["createaccount"] = true;
 $wgGroupPermissions["*"]["edit"] = false;
 
+$wgGroupPermissions["user"]["edit"] = false;
 $wgGroupPermissions['user']['oathauth-enable'] = true;
 $wgGroupPermissions['user']['writeapi'] = true;
+
+$wgGroupPermissions["verified"]["edit"] = true;
 
 $wgGroupPermissions['sysop']['interwiki'] = true;
 
