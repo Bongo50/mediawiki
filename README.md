@@ -1,5 +1,7 @@
 # Bongo50's Docker MediaWiki configuration.
 
+Specifically made for [the Warwick Wiki](https://warwick.wiki/).
+
 Forked from [the Team Fortress Wiki](https://github.com/tfwiki/mediawiki).
 
 ## Configuration
