@@ -162,6 +162,7 @@ wfLoadExtensions( [
     'EmbedVideo',
     'Gadgets',
     'InputBox',
+    'Interwiki',
     'Linter',
     'LoginNotify',
     'Loops',
