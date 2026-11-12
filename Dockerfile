@@ -1,4 +1,4 @@
-FROM mediawiki:1.43
+FROM mediawiki:1.46
 
 # Luxuries
 RUN apt-get update && apt-get install -y \
@@ -39,34 +39,34 @@ RUN mv /var/www/html /var/www/i-will-be-w && \
 
 # MediaWiki extensions
 WORKDIR /var/www/html/w/extensions
-RUN git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/CommonsMetadata && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Disambiguator && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/WikiSEO && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Description2 && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Popups && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Variables && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TitleKey && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/CodeMirror && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/CharInsert && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TwoColConflict && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/RandomSelection && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/DismissableSiteNotice && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/RSS && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateWizard && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateSandbox && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/Loops && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/CookieWarning && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/timeline && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/PluggableAuth && \
-    git clone --depth 1 -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/OpenIDConnect && \
-    git clone --depth 1 -b REL1_43 https://github.com/wiki-gg-oss/mediawiki-extensions-ParserPower.git && mv mediawiki-extensions-ParserPower ParserPower && \
-    git clone --depth 1 -b REL1_43 https://github.com/AlPha5130/mediawiki-extensions-EditCountNeue.git && mv mediawiki-extensions-EditCountNeue EditCountNeue && \
-    git clone --depth 1 -b v4.1.0 https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo.git && mv mediawiki-extensions-EmbedVideo EmbedVideo && \
-    git clone --depth 1 -b v2.0.0 https://github.com/StarCitizenTools/mediawiki-extensions-Thumbro.git && mv mediawiki-extensions-Thumbro Thumbro && \
+RUN git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/CommonsMetadata && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/Disambiguator && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/WikiSEO && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/Description2 && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/Popups && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/Variables && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/TitleKey && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/CodeMirror && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/CharInsert && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/TwoColConflict && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/RandomSelection && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/DismissableSiteNotice && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/RSS && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateWizard && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateSandbox && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/Loops && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/CookieWarning && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/timeline && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/PluggableAuth && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/OpenIDConnect && \
+    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/Cargo && \
+    git clone --depth 1 -b REL1_46 https://github.com/wiki-gg-oss/mediawiki-extensions-ParserPower.git && mv mediawiki-extensions-ParserPower ParserPower && \
+    git clone --depth 1 -b REL1_46 https://github.com/AlPha5130/mediawiki-extensions-EditCountNeue.git && mv mediawiki-extensions-EditCountNeue EditCountNeue && \
+    git clone --depth 1 -b v4.2.0 https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo.git && mv mediawiki-extensions-EmbedVideo EmbedVideo && \
+    git clone --depth 1 -b v2.1.2 https://github.com/StarCitizenTools/mediawiki-extensions-Thumbro.git && mv mediawiki-extensions-Thumbro Thumbro && \
     git clone --depth 1 -b 1.7.0 https://github.com/Liquipedia/VariablesLua.git && \
-    git clone --depth 1 https://github.com/Universal-Omega/PortableInfobox.git && \
-    git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/Cargo
+    git clone --depth 1 https://github.com/Universal-Omega/PortableInfobox.git
 
 WORKDIR /var/www/html/w
 
