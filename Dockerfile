@@ -39,8 +39,7 @@ RUN mv /var/www/html /var/www/i-will-be-w && \
 
 # MediaWiki extensions
 WORKDIR /var/www/html/w/extensions
-RUN git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateStyles && \
-    git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/CommonsMetadata && \
+RUN git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/CommonsMetadata && \
     git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/Disambiguator && \
     git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/WikiSEO && \
     git clone --depth 1 -b REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/Description2 && \
